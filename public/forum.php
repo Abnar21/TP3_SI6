@@ -11,12 +11,17 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">
                             <button type="button" class="btn btn-default"><a href="index.php?action=like&id=<?=$unSujet["id"]?>"><img src="resources/pouceVert.jpg" width="45" height="45"></a></button>
-                          <?= $unSujet["titre"]?> - <?= dateToFr($unSujet["date_creation"])?> - <?= $unSujet["auteur"]?> 
-                          <button type="button" class="btn btn-defaul"><a href="index.php?action=signal&id=<?=$unSujet["id"]?>"><img src="resources/pouceRouge.jpg" width="45" height="45"></a></button>
+                          <?= $unSujet["titre"]?> - <?= dateToFr($unSujet["date_creation"])?> 
+                          <button type="button" class="btn btn-defaul"><a href="index.php?action=signal&id=<?=$unSujet["id"]?>"><img src="resources/pouceRouge.jpg" width="45" height="45"></a></button></br>
+                          Auteur : <?= $unSujet["auteur"]?>
                         </h3>
                     </div>
                     <div class="panel-body">
                         <?= $unSujet["description"]?>
+                    </div>
+                    <div class="panel-body">
+                        Nombre d'intérets : <?= $unSujet["nb_interet"]?></br>
+                        Nombre de signalements : <?= $unSujet["nb_signalement"]?>
                     </div>
                 </div>        
             <?php 

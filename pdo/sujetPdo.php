@@ -22,7 +22,7 @@ function createSujet($titre,$description){
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $requete = $connection->prepare('INSERT INTO sujet(titre, description,date_creation, auteur) VALUES(:titre,:description,:date_creation,:auteur)');
         $requete->bindValue(':titre', $titre, PDO::PARAM_STR);
-        $requete->bindValue(':auteur', $auteur, PDO::PARAM_STR);
+        $requete->bindValue(':auteur', $_POST["auteur"], PDO::PARAM_STR);
         $requete->bindValue(':description', $description, PDO::PARAM_STR);
         $requete->bindValue(':date_creation', date('Y-m-d'));
         $requete->execute();
@@ -55,7 +55,6 @@ function dislike($id){
         $requete->bindValue(':id', $id);
         $requete->execute();
         $connection=null;
-        echo 'Merci de votre avertissement.L auteur du commentaire sera sanctionner après examen du texte';
         }
     catch (PDOException $e) {
         echo 'Échec lors de la création d un sujet : ' . $e->getMessage();

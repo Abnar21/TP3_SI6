@@ -65,10 +65,14 @@
                                     include 'public/accueil.php';
                                     break;
                                 case "signal":
-                                    signal($_GET["id"]);
+                                    dislike($_GET["id"]);
+                                    sleep(5);
+                                    include 'public/accueil.php';
                                     break;
                                 case "like":
                                     like($_GET["id"]);
+                                    sleep(5);
+                                    include 'public/accueil.php';
                                     break;
                                 case "forum":
                                     /*try
@@ -103,8 +107,9 @@
                                     {
                                         /*$connection = new PDO('mysql:host=localhost;dbname=tp3_si6;charset=utf8', 'root', '');
                                         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                        $requete = $connection->prepare('INSERT INTO sujet(titre, description,date_creation) VALUES(:titre,:description,:date_creation)');
+                                        $requete = $connection->prepare('INSERT INTO sujet(titre, auteur, description, date_creation) VALUES(:titre,:auteur,:description,:date_creation)');
                                         $requete->bindValue(':titre', $_POST["titre"], PDO::PARAM_STR);
+                                        $requete->bindValue(':auteur, $_POST["auteur"], PDO::PARAM_STR);
                                         $requete->bindValue(':description', $_POST["description"], PDO::PARAM_STR);
                                         $requete->bindValue(':date_creation', date('Y-m-d'));
                                         $requete->execute();

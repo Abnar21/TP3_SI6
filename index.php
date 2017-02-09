@@ -67,15 +67,15 @@
                                 case "signal":
                                     dislike($_GET["id"]);
                                     sleep(5);
-                                    include 'public/forum.php';
+                                    include 'public/accueil.php';
                                     break;
-                                case "modif":
+                                case "update":
                                     include'public/update.php';
                                     break;
                                 case "like":
                                     like($_GET["id"]);
                                     sleep(5);
-                                    include 'public/forum.php';
+                                    include 'public/accueil.php';
                                     break;
                                 case "forum":
                                     /*try
@@ -100,6 +100,7 @@
                                     include 'public/contact.php';
                                     break;
                                 case "admin":
+                                    $lesSujets= getAllSujet();
                                     include 'public/admin.php';
                                     break;
                                 case "create":

@@ -5,7 +5,7 @@ function getAllSujet(){
     {
         $connection = new PDO("mysql:host=localhost;dbname=".BD.";charset=utf8", USER_BD, PWD_BD);
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $response=$connection->query('SELECT * FROM sujet');
+        $response=$connection->query('SELECT * FROM sujet WHERE nb_signalement < 5');
         $lesSujets=$response->fetchAll();
         return $lesSujets;
         $connection=null;

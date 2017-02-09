@@ -67,12 +67,15 @@
                                 case "signal":
                                     dislike($_GET["id"]);
                                     sleep(5);
-                                    include 'public/accueil.php';
+                                    include 'public/forum.php';
+                                    break;
+                                case "modif":
+                                    include'public/update.php';
                                     break;
                                 case "like":
                                     like($_GET["id"]);
                                     sleep(5);
-                                    include 'public/accueil.php';
+                                    include 'public/forum.php';
                                     break;
                                 case "forum":
                                     /*try

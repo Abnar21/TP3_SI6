@@ -20,8 +20,9 @@ function createSujet($titre,$description){
     {
         $connection = new PDO("mysql:host=localhost;dbname=".BD.";charset=utf8", USER_BD, PWD_BD);
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $requete = $connection->prepare('INSERT INTO sujet(titre, description,date_creation) VALUES(:titre,:description,:date_creation)');
+        $requete = $connection->prepare('INSERT INTO sujet(titre, description,date_creation, auteur) VALUES(:titre,:description,:date_creation,:auteur)');
         $requete->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $requete->bindValue(':auteur', $auteur, PDO::PARAM_STR);
         $requete->bindValue(':description', $description, PDO::PARAM_STR);
         $requete->bindValue(':date_creation', date('Y-m-d'));
         $requete->execute();

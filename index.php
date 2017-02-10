@@ -67,7 +67,7 @@
                                 case "signal":
                                     dislike($_GET["id"]);
                                     sleep(5);
-                                    include 'public/accueil.php';
+                                    header("location : index.php?action=forum");
                                     break;
                                 case "update":
                                     include'public/update.php';
@@ -75,7 +75,7 @@
                                 case "like":
                                     like($_GET["id"]);
                                     sleep(5);
-                                    include 'public/accueil.php';
+                                    header("location : index.php?action=forum");
                                     break;
                                 case "forum":
                                     /*try
@@ -105,6 +105,9 @@
                                     break;
                                 case "create":
                                     include 'public/create.php';
+                                    break;
+                                case "verif":
+                                    include'public/verif.php';
                                     break;
                                 case "createStore":
                                     try

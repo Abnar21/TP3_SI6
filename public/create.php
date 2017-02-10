@@ -14,7 +14,7 @@
               <label for="description">Description</label>
               <textarea class="form-control" rows="3" id="description" name="description" placeholder="Description du sujet"></textarea>
             </div>
-           <button type="submit" class="btn btn-default">Créer</button>
+            <a href="index.php?action=verif"><button type="submit" class="btn btn-default">Créer</button></a>
         </form>
         </div>    
     <div class="col-md-2"></div>    

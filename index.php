@@ -41,6 +41,7 @@
             <li><a href="index.php?action=forum">Forum</a></li>
             <li><a href="index.php?action=contact">Contact</a></li>
             <li><a href="index.php?action=admin">Admin</a></li>
+            <li><a href="index.php?action=login">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -51,6 +52,7 @@
       <div class="starter-template">
         
                     <?php
+                    require 'pdo/userPdo.php';
                     require 'resources/helper.php';
                     require 'pdo/sujetPdo.php';
                     include 'resources/config.php';
@@ -130,6 +132,12 @@
                                     break;
                                 default:
                                     include 'public/accueil.php';
+                                    break;
+                                case 'login':
+                                    include 'public/login.php';
+                                    break;
+                                case 'checkLogin':
+                                    checkLogin($_POST['login'], sha1($_POST['pwd']));
                                     break;
                             }
                     }
